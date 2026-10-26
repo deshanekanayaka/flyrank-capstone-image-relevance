@@ -1,17 +1,23 @@
-# Domain Docs
+# Domain docs
 
-How the engineering skills should consume this repo's domain documentation when exploring the codebase.
+This file tells the engineering skills how to use the domain documentation of this
+repository during an exploration of the codebase.
 
-## Before exploring, read these
+## Read these before you explore
 
-- **`CONTEXT.md`** at the repo root: the glossary of this project's domain terms.
-- **`docs/adr/`**: read ADRs that touch the area you're about to work in.
+- `CONTEXT.md` at the repository root. It is the glossary of the domain terms of this
+  project.
+- `docs/adr/`. Read each ADR that touches the area of your next piece of work.
 
-If any of these files don't exist, **proceed silently**. Don't flag their absence; don't suggest creating them upfront. The `/domain-modeling` skill (reached via `/grill-with-docs` and `/improve-codebase-architecture`) creates them lazily when terms or decisions actually get resolved.
+If one of these files does not exist, continue without a word. Do not report the absence,
+and do not propose to create the file in advance. The `/domain-modeling` skill creates
+these files late, at the time that a term or a decision is resolved. The skills
+`/grill-with-docs` and `/improve-codebase-architecture` reach it.
 
 ## File structure
 
-This repo is **single-context**: one `CONTEXT.md` and one `docs/adr/` at the root.
+This repository is single-context. It holds one `CONTEXT.md` and one `docs/adr/` at the
+root.
 
 ```
 /
@@ -23,14 +29,20 @@ This repo is **single-context**: one `CONTEXT.md` and one `docs/adr/` at the roo
 └── eval/
 ```
 
-## Use the glossary's vocabulary
+## Use the vocabulary of the glossary
 
-When your output names a domain concept (in an issue title, a refactor proposal, a hypothesis, a test name), use the term as defined in `CONTEXT.md`. Don't drift to synonyms the glossary explicitly avoids.
+Your output names domain concepts in issue titles, refactor proposals, hypotheses, and
+test names. Use the term as `CONTEXT.md` defines it. Do not drift to a synonym that the
+glossary names under `_Avoid_`.
 
-If the concept you need isn't in the glossary yet, that's a signal: either you're inventing language the project doesn't use (reconsider) or there's a real gap (note it for `/domain-modeling`).
+If the glossary does not hold the concept that you need, that is a signal. Either you
+invent language that the project does not use, which you must reconsider, or there is a
+real gap. If there is a real gap, note it for `/domain-modeling`.
 
-## Flag ADR conflicts
+## Report a conflict with an ADR
 
-If your output contradicts an existing ADR, surface it explicitly rather than silently overriding:
+If your output contradicts an existing ADR, state the conflict. Do not override the ADR
+without a word. Write the conflict in this form:
 
-> _Contradicts ADR-0007 (event-sourced orders), but worth reopening because…_
+> This contradicts ADR-0007 (event-sourced orders). It is still worth a second look,
+> because ...

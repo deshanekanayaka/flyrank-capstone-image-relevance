@@ -2,8 +2,10 @@
 .venv/
 __pycache__/
 *.pyc
-data/corpus/*
-!data/corpus/.gitkeep
+# Downloaded packshots stay out of the repository. The manifest and the licence do not,
+# and the five demonstration images under images/demo/ are committed on purpose.
+data/corpus/images/*
+!data/corpus/images/demo/
 .DS_Store
 
 # Assignment brief, not ours to redistribute

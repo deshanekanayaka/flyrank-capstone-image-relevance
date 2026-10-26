@@ -4,12 +4,16 @@
 
 ### Issue tracker
 
-Issues live as GitHub issues in `deshanekanayaka/flyrank-capstone-image-relevance`, managed with the `gh` CLI. See `docs/agents/issue-tracker.md`.
+The issues for this project are GitHub issues in
+`deshanekanayaka/flyrank-capstone-image-relevance`. Manage them with the `gh` CLI. For the
+commands, read `docs/agents/issue-tracker.md`.
 
 ### Triage labels
 
-The five default labels, each string equal to its name. See `docs/agents/triage-labels.md`.
+This repository uses the five default labels. Each label string is equal to its name. For
+the table, read `docs/agents/triage-labels.md`.
 
 ### Domain docs
 
-Single-context: `CONTEXT.md` and `docs/adr/` at the repo root. See `docs/agents/domain.md`.
+This repository is single-context. The domain docs are `CONTEXT.md` and `docs/adr/` at the
+root. For the rules that govern them, read `docs/agents/domain.md`.

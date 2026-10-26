@@ -1,1 +1,20 @@
-TODO
+name: flyrank-capstone-image-relevance
+title: Packshot Integrity Gate
+run: docker compose up --build
+seed: docker compose exec web python -m scripts.seed
+test: docker compose exec web pytest
+base_url: http://localhost:8000
+endpoints:
+  - POST /jobs/vision
+  - GET /jobs/{job_id}
+  - GET /products/{barcode}/images
+  - GET /suggestions?decision=REVIEW
+  - POST /suggestions/{id}/approve
+  - POST /suggestions/{id}/reject
+  - GET /suggestions/{id}/explain
+  - GET /costs
+notes: >
+  Every route is tenant-scoped and needs an X-Tenant-Key header. The seed step prints a
+  demonstration tenant key. The seed is idempotent, so running it twice creates no
+  duplicate products. Migrations run from the web container entrypoint, so the run
+  command works on a clean machine.
